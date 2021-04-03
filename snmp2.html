@@ -1,0 +1,892 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="7000">
+
+    <title>SPRALARM</title>
+    
+    <style>
+    
+        .flex-container{    
+            display: flex;
+            
+            justify-content: space-around; 
+            height: 300px;
+            
+         float: bottom;
+        }
+        
+        
+        .flex-container > div {
+            
+            border-radius:80px;
+  background-color: DodgerBlue;
+ 
+  
+   text-align: center;
+            
+            
+        }
+        
+        
+        
+        .flex-container2{   
+            
+            
+            display:flex;
+           
+            height: 300px;
+            
+             justify-content: space-around;
+            
+        }
+        
+             .flex-container2> div {
+                border-radius:80px;
+            
+  background-color: DodgerBlue;
+ 
+  
+    text-align: center;
+            
+            
+        }
+        
+        
+        .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+        
+        
+        .Timer {
+            
+            font-family:sans-serif;
+            font-size: 30px;
+            background: white;
+        }
+    
+    
+    </style>
+    
+</head>
+    
+    
+<body>
+    
+    
+     <br>
+     <br>
+     
+    
+    
+   <div class="flex-container">
+    
+    <div>
+        
+        <P class="center"><span><img src="img/Canal14.png" alt="Ch14" style="width:120px;height:50px;" ></span></P>
+        
+      <audio controls id="audioalarmCh14" class="audio">
+   
+     <source src="Audios/Alarm4.mp3" type="audio/mpeg">
+  
+  </audio>
+    
+         <P class="center"><span><img src="img/alarm.jpg" alt="Camp" style="width:46px;height:50px;" id="ch14c"></span></P>
+        
+        <div  id="14"  class= "Timer">00:00:00</div>
+        
+        
+    </div>
+    
+     <div>
+         
+         <P class="center"><span><img src="img/CanalOnce.png" alt="Ch11" width="85px" height="60px" > </span></P>
+         
+          <audio controls id="audioalarmCh11" class="audio">
+   
+     <source src="Audios/Alarm4.mp3" type="audio/mpeg">
+  
+  </audio>
+       
+        <P class="center"><span><img src="img/alarm.jpg" alt="Camp" style="width:46px;height:50px;"  id="ch11c"></span></P>
+         
+         <div  id="11"  class= "Timer">00:00:00</div>
+       
+       
+       </div>
+    
+ 
+    
+    
+    <div>
+    
+        <P class="center"><span><img src="img/Canal22.jpg" alt="Ch22" style="width:50px;height:50px;" ></span></P>
+        
+      <audio controls id="audioalarmCh22"   class="audio">
+   
+     <source src="Audios/Alarm4.mp3" type="audio/mpeg">
+  
+       </audio>
+    
+         <P class="center"><span><img src="img/alarm.jpg" alt="Camp" style="width:46px;height:50px;"  id = "ch22c"></span></P>
+        
+        <div  id="22" class= "Timer">00:00:00</div>
+        
+        
+    </div>
+
+    </div>   
+    
+    <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    
+
+    <div class="flex-container2">
+        
+        
+          <div>
+    
+          <P class="center"><img src="img/IngenioTV.png" alt="Ch14.2" style="width:185px;height:50px;" ></P>          
+              
+    <audio controls id="audioalarmChInge"    class="audio">
+   
+     <source src="Audios/Alarm4.mp3" type="audio/mpeg">
+  
+  </audio>
+    
+     <P class="center"><span><img src="img/alarm.jpg" alt="Camp" style="width:46px;height:50px;" id="chingc"></span></P>
+              
+    <div  id="14.2" class= "Timer">00:00:00</div>
+    
+              
+  </div>
+    
+    
+    
+       
+    <div>
+        
+        <P class="center"><span><img src="img/TVUNAM.png" alt="Ch20" style="width:70px;height:60px;" ></span></P>
+    
+     <audio controls id="audioalarmCh20"     class="audio">
+   
+     <source src="Audios/Alarm4.mp3" type="audio/mpeg">
+  
+    </audio>
+    
+         <P class="center"><span><img src="img/alarm.jpg" alt="Camp" style="width:46px;height:50px;"  id="ch20c"></span></P>
+        
+         <div  id="20" class= "Timer">00:00:00</div>
+      
+    
+    </div>
+    
+   
+    
+    
+    <div>
+        
+        
+        <P class="center"><span><img src="img/Congreso.png" alt="Ch14" width="70px" height="60px" ></span></P>
+        
+     <audio controls id="audioalarmCh45"    class="audio">
+   
+     <source src="Audios/Alarm4.mp3" type="audio/mpeg">
+  
+  </audio>
+    
+         <P class="center" ><span><img src="img/alarm.jpg" alt="Camp" width="46px" height="50px"  id="ch45c"></span></P>
+        
+        <div  id="45"  class= "Timer">00:00:00</div>
+     
+    </div> 
+    
+    
+    </div> 
+    
+     <script>
+    
+         var sec =0;       var sIng = 0;
+         var min =0;       var mIng = 0;
+         var hrs =0;       var hIng = 0;
+         
+         var se = 0;       var sUn = 0;
+         var mi = 0;       var mUn = 0;
+         var hr = 0;       var hUn = 0;
+ 
+         var s = 0;        var sC = 0;
+         var m = 0;        var mC = 0;
+         var h = 0;        var hC = 0;
+         
+         
+         
+    var myVar;
+             
+  myVar = setInterval(function(){ 
+      
+
+      
+
+var audioCh14 = document.getElementById("audioalarmCh14");
+      
+var audioCh11 = document.getElementById("audioalarmCh11");
+      
+var audioCh22 = document.getElementById("audioalarmCh22");
+      
+var audioChInge = document.getElementById("audioalarmChInge");
+      
+var audioCh20 = document.getElementById("audioalarmCh20");
+      
+var audioCh45 = document.getElementById("audioalarmCh45");
+      
+
+      var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var response= this.responseText;
+
+            var values = response.split(",");
+
+              
+            
+                   
+
+            
+               values.forEach(myFunction);
+            
+              function myFunction(item, index,array) {
+
+                
+
+                 if (index==0  && item==1){
+                     
+      
+                     sec++;
+                     
+                          if(sec==60){
+                         
+                         sec=0;
+                         min++;
+                         
+                         if(min==60){
+                             
+                             min=0;
+                             hrs++;
+                         }
+                     }
+                     
+                     
+                     
+                     if (sec < 10 & min < 10 & hrs < 10){
+                         
+                         
+                        document.getElementById("14").innerHTML = '0' + hrs + ':' + '0' + min + ':' + '0' + sec; 
+                         
+                     }
+                  
+                     if (sec < 10 & min >=10 & hrs <10){
+                         
+                         document.getElementById("14").innerHTML = '0' + hrs + ':' + min + ':' + '0' + sec;
+                     }
+                     
+                     if (sec < 10 & min >= 10 & hrs >= 10){
+                         
+                         document.getElementById("14").innerHTML = hrs + ':' + min + ':' + '0' + sec;
+                         
+                     }
+                         
+                     if (sec >= 10 & min < 10 & hrs < 10){
+                         
+                        document.getElementById("14").innerHTML = '0' + hrs + ':' + '0' + min + ':' +  sec;  
+                         
+                     }
+                     
+                     if (sec >= 10 & min >= 10 & hrs < 10){
+                         
+                          
+                       document.getElementById("14").innerHTML = '0' + hrs + ':' +  min + ':' +  sec;  
+                    
+                     }
+                     
+                     if (sec >= 10 & min < 10 & hrs >= 10){
+                         
+                         document.getElementById("14").innerHTML =  hrs + ':' + '0' + min + ':' +  sec;
+                         
+                     }
+                     
+                     if (sec >=10 & min >=10 & hrs >= 10){
+                         
+                          document.getElementById("14").innerHTML =  hrs + ':'  + min + ':' +  sec;
+                         
+                     }
+                     
+                     if (sec < 10 & min < 10 & hrs >=10){
+                         
+                         document.getElementById("14").innerHTML =  hrs + ':'  +  '0' + min + ':' + '0' + sec;
+                         
+                     }
+                     
+                
+                    
+                    
+                     audioCh14.play();
+                     
+                     document.getElementById("ch14c").style.visibility = "visible";
+                     
+                   
+                    }
+
+                
+                  
+                  
+                 
+                  
+                  else if (index==1  && item==1){
+                   
+                      se++;
+                     
+                          if(se==60){
+                         
+                         se=0;
+                         mi++;
+                         
+                         if(mi==60){
+                             
+                             mi=0;
+                             hr++;
+                         }
+                     }
+                     
+                     
+                     
+                         if (se < 10 & mi < 10 & hr < 10){
+                         
+                         
+                        document.getElementById("11").innerHTML = '0' + hr + ':' + '0' + mi + ':' + '0' + se; 
+                         
+                     }
+                  
+                     if (se < 10 & mi >=10 & hr <10){
+                         
+                         document.getElementById("11").innerHTML = '0' + hr + ':' + mi + ':' + '0' + se;
+                     }
+                     
+                     if (se < 10 & mi >= 10 & hr >= 10){
+                         
+                         document.getElementById("11").innerHTML = hr + ':' + mi + ':' + '0' + se;
+                         
+                     }
+                         
+                     if (se >= 10 & mi < 10 & hr < 10){
+                         
+                        document.getElementById("11").innerHTML = '0' + hr + ':' + '0' + mi + ':' +  se;  
+                         
+                     }
+                     
+                     if (se >= 10 & mi >= 10 & hr < 10){
+                         
+                          
+                       document.getElementById("11").innerHTML = '0' + hr + ':' +  mi + ':' +  se;  
+                    
+                     }
+                     
+                     if (se >= 10 & mi < 10 & hr >= 10){
+                         
+                         document.getElementById("11").innerHTML =  hr + ':' + '0' + mi + ':' +  se;
+                         
+                     }
+                     
+                     if (se >=10 & mi >=10 & hr >= 10){
+                         
+                          document.getElementById("11").innerHTML =  hr + ':'  + mi + ':' +  se;
+                         
+                     }
+                     
+                     if (se < 10 & mi < 10 & hr >=10){
+                         
+                         document.getElementById("11").innerHTML =  hr + ':'  +  '0' + mi + ':' + '0' + se;
+                         
+                     }
+                     
+                
+                
+                         audioCh11.play();
+                     
+                      document.getElementById("ch11c").style.visibility = "visible";
+
+                }
+                  
+                  
+             else if (index==2  && item==1){
+                   
+                   
+                    
+                    s++;
+                     
+                          if(s==60){
+                         
+                         s=0;
+                         m++;
+                         
+                         if(m==60){
+                             
+                             m=0;
+                             h++;
+                         }
+                     }
+                     
+                     
+                     
+                     if (s < 10 & m < 10 & h < 10){
+                         
+                         
+                        document.getElementById("22").innerHTML = '0' + h + ':' + '0' + m + ':' + '0' + s; 
+                         
+                     }
+                  
+                     if (s < 10 & m >=10 & h <10){
+                         
+                         document.getElementById("22").innerHTML = '0' + h + ':' + m + ':' + '0' + s;
+                     }
+                     
+                     if (s < 10 & m >= 10 & h >= 10){
+                         
+                         document.getElementById("22").innerHTML = h + ':' + m + ':' + '0' + s;
+                         
+                     }
+                         
+                     if (s >= 10 & m < 10 & h < 10){
+                         
+                        document.getElementById("22").innerHTML = '0' + h + ':' + '0' + m + ':' +  s;  
+                         
+                     }
+                     
+                     if (s >= 10 & m >= 10 & h < 10){
+                         
+                          
+                       document.getElementById("22").innerHTML = '0' + h + ':' +  m + ':' +  s;  
+                    
+                     }
+                     
+                     if (s >= 10 & m < 10 & h >= 10){
+                         
+                         document.getElementById("22").innerHTML =  h + ':' + '0' + m + ':' +  s;
+                         
+                     }
+                     
+                     if (s >=10 & m >=10 & h >= 10){
+                         
+                          document.getElementById("22").innerHTML =  h + ':'  + m + ':' +  s;
+                         
+                     }
+                     
+                     if (s < 10 & m < 10 & h >=10){
+                         
+                         document.getElementById("22").innerHTML =  h + ':'  +  '0' + m + ':' + '0' + s;
+                         
+                     }
+                     
+                      audioCh22.play();
+                   
+                     document.getElementById("ch22c").style.visibility = "visible";
+
+                       }
+
+                
+
+                  
+                  
+                  
+                  
+                  
+                  
+               else  if (index==3  && item==1){
+                   
+
+                    sIng++;
+                     
+                          if(sIng==60){
+                         
+                         sIng=0;
+                         mIng++;
+                         
+                         if(mIng==60){
+                             
+                             mIng=0;
+                             hIng++;
+                         }
+                     }
+                     
+                     
+                     
+                     if (sIng < 10 & mIng < 10 & hIng < 10){
+                         
+                         
+                        document.getElementById("14.2").innerHTML = '0' + hIng + ':' + '0' + mIng + ':' + '0' + sIng; 
+                         
+                     }
+                  
+                     if (sIng < 10 & mIng >=10 & hIng <10){
+                         
+                         document.getElementById("14.2").innerHTML = '0' + hIng + ':' + mIng + ':' + '0' + sIng;
+                     }
+                     
+                     if (sIng < 10 & mIng >= 10 & hIng >= 10){
+                         
+                         document.getElementById("14.2").innerHTML = hIng + ':' + mIng + ':' + '0' + sIng;
+                         
+                     }
+                         
+                     if (sIng >= 10 & mIng < 10 & hIng < 10){
+                         
+                        document.getElementById("14.2").innerHTML = '0' + hIng + ':' + '0' + mIng + ':' +  sIng;  
+                         
+                     }
+                     
+                     if (sIng >= 10 & mIng >= 10 & hIng < 10){
+                         
+                          
+                       document.getElementById("14.2").innerHTML = '0' + hIng + ':' +  mIng + ':' +  sIng;  
+                    
+                     }
+                     
+                     if (sIng >= 10 & mIng < 10 & hIng >= 10){
+                         
+                         document.getElementById("14.2").innerHTML =  hIng + ':' + '0' + mIng + ':' +  sIng;
+                         
+                     }
+                     
+                     if (sIng >=10 & mIng >=10 & hIng >= 10){
+                         
+                          document.getElementById("14.2").innerHTML =  hIng + ':'  + mIng + ':' +  sIng;
+                         
+                     }
+                     
+                     if (sIng < 10 & mIng < 10 & hIng >=10){
+                         
+                         document.getElementById("14.2").innerHTML =  hIng + ':'  +  '0' + mIng + ':' + '0' + sIng;
+                         
+                     }
+                   
+                            audioChInge.play();
+                   
+                    document.getElementById("chingc").style.visibility = "visible";
+                   
+                }
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                 else if (index==4   && item==1){
+                   
+
+                  sUn++;
+                     
+                          if(sUn==60){
+                         
+                         sUn=0;
+                         mUn++;
+                         
+                         if(mUn==60){
+                             
+                             mUn=0;
+                             hUn++;
+                         }
+                     }
+                     
+                     
+                     
+                     if (sUn < 10 & mUn < 10 & hUn < 10){
+                         
+                         
+                        document.getElementById("20").innerHTML = '0' + hUn + ':' + '0' + mUn + ':' + '0' + sUn; 
+                         
+                     }
+                  
+                     if (sUn < 10 & mUn >=10 & hUn <10){
+                         
+                         document.getElementById("20").innerHTML = '0' + hUn + ':' + mUn + ':' + '0' + sUn;
+                     }
+                     
+                     if (sUn < 10 & mUn >= 10 & hUn >= 10){
+                         
+                         document.getElementById("20").innerHTML = hUn + ':' + mUn + ':' + '0' + sUn;
+                         
+                     }
+                         
+                     if (sUn >= 10 & mUn < 10 & hUn < 10){
+                         
+                        document.getElementById("20").innerHTML = '0' + hUn + ':' + '0' + mUn + ':' +  sUn;  
+                         
+                     }
+                     
+                     if (sUn >= 10 & mUn >= 10 & hUn < 10){
+                         
+                          
+                       document.getElementById("20").innerHTML = '0' + hUn + ':' +  mUn + ':' +  sUn;  
+                    
+                     }
+                     
+                     if (sUn >= 10 & mUn < 10 & hUn >= 10){
+                         
+                         document.getElementById("20").innerHTML =  hUn + ':' + '0' + mUn + ':' +  sUn;
+                         
+                     }
+                     
+                     if (sUn >=10 & mUn >=10 & hUn >= 10){
+                         
+                          document.getElementById("20").innerHTML =  hUn + ':'  + mUn + ':' +  sUn;
+                         
+                     }
+                     
+                     if (sUn < 10 & mUn < 10 & hUn >=10){
+                         
+                         document.getElementById("20").innerHTML =  hUn + ':'  +  '0' + mUn + ':' + '0' + sUn;
+                         
+                     } 
+                     
+                     audioCh20.play();
+                     
+                      document.getElementById("ch20c").style.visibility = "visible";
+
+                }
+
+
+               
+                  
+                  
+                  
+                  
+                  
+                  else  if (index==5 && item==1){
+                   
+
+                   sC++;
+                     
+                          if(sC==60){
+                         
+                         sC=0;
+                         mC++;
+                         
+                         if(mC==60){
+                             
+                             mC=0;
+                             hC++;
+                         }
+                     }
+                     
+                     
+                     
+                     if (sC < 10 & mC < 10 & hC < 10){
+                         
+                         
+                        document.getElementById("45").innerHTML = '0' + hC + ':' + '0' + mC + ':' + '0' + sC; 
+                         
+                     }
+                  
+                     if (sC < 10 & mC >=10 & hC <10){
+                         
+                         document.getElementById("45").innerHTML = '0' + hC + ':' + mC + ':' + '0' + sC;
+                     }
+                     
+                     if (sC < 10 & mC >= 10 & hC >= 10){
+                         
+                         document.getElementById("45").innerHTML = hC + ':' + mC + ':' + '0' + sC;
+                         
+                     }
+                         
+                     if (sC >= 10 & mC < 10 & hC < 10){
+                         
+                        document.getElementById("45").innerHTML = '0' + hC + ':' + '0' + mC + ':' +  sC;  
+                         
+                     }
+                     
+                     if (sC >= 10 & mC >= 10 & hC < 10){
+                         
+                          
+                       document.getElementById("45").innerHTML = '0' + hC + ':' +  mC + ':' +  sC;  
+                    
+                     }
+                     
+                     if (sC >= 10 & mC < 10 & hC >= 10){
+                         
+                         document.getElementById("45").innerHTML =  hC + ':' + '0' + mC + ':' +  sC;
+                         
+                     }
+                     
+                     if (sC >=10 & mC >=10 & hC >= 10){
+                         
+                          document.getElementById("45").innerHTML =  hC + ':'  + mC + ':' +  sC;
+                         
+                     }
+                     
+                     if (sC < 10 & mC < 10 & hC >=10){
+                         
+                         document.getElementById("45").innerHTML =  hC + ':'  +  '0' + mC + ':' + '0' + sC;
+                         
+                     }
+                     
+                     audioCh45.play();
+                     
+                      document.getElementById("ch45c").style.visibility = "visible";
+                     
+                     
+
+                }
+
+                
+             
+                  
+                  
+                  
+                  
+                  
+                  
+                 else  if (index==0  &&  item==0){
+                   
+                    
+                    
+                  
+                   
+                   audioCh14.pause();
+                   
+                  
+                   document.getElementById("ch14c").style.visibility = "hidden";
+                   
+               
+                }
+
+               
+                  
+                  
+                  
+                  
+                  else if (index==1  && item==0 ){
+                  
+
+               
+                  
+                    audioCh11.pause();
+                    
+                  
+                    document.getElementById("ch11c").style.visibility = "hidden";
+
+
+               }
+
+              
+                  
+                  
+                  
+                  
+                  else if (index==2  &&  item==0 ){
+                  
+
+                   
+                   audioCh22.pause();
+                  
+                    
+                    document.getElementById("ch22c").style.visibility = "hidden";
+
+                      }
+
+               
+
+
+              
+                  
+                  
+                  
+                  else  if (index==3  && item==0){
+                  
+
+                   audioChInge.pause();
+                  
+                    
+                  document.getElementById("chingc").style.visibility = "hidden";
+                  
+                  
+                  
+               }
+               
+                  
+                  
+                  
+                  else if (index==4   && item==0){
+                  
+
+              
+                    
+                    audioCh20.pause();
+                    
+                       
+                    document.getElementById("ch20c").style.visibility = "hidden";
+
+               }
+
+
+               
+                  
+                  
+                  else  if (index==5 && item==0){
+                  
+
+                    
+                    audioCh45.pause();
+                    
+                    
+                    document.getElementById("ch45c").style.visibility = "hidden";
+
+                     }
+
+                  
+                
+                      
+                            
+                      
+            
+                  
+                                                          
+
+            }
+                
+                    
+
+            }
+            
+            
+            
+        };
+      
+                    xmlhttp.open("POST", "snmp2.php", true);
+                               
+                 xmlhttp.send();
+        
+           }, 1000);
+    
+    
+    
+    </script>
+    
+     
+</body>
+</html>
